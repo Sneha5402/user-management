@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h2>User Management</h2>
+    </header>
+
+    <div class="content">
+        <div class="index">
+            <button class="index-user" id="user-btn">
+                <i class="fas fa-user-plus"></i>
+                <span>User Management</span>
+            </button>
+            <button class="index-group" id="group-btn">
+                <i class="fas fa-users"></i>
+                <span>Group Management</span>
+            </button>
+            <button class="index-role" id="role-btn">
+                <i class="fas fa-user-shield"></i>
+                <span>Role Management</span>
+            </button>
+        </div>
+        <div class="details" id="details">
+            <!-- Default content for the details section -->
+            <h1>Welcome to User Management</h1>
+             <img src="image/user.png">
+              <!-- Toast Notification -->
+            <div id="toast" class="toast"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Adding/Editing User -->
+    <div id="user-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="close-btn" class="close-btn">&times;</span>
+            <h3 id="modal-title">Add User</h3>
+            <form id="user-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName">
+                <div id="message" class="message"></div>
+                <div class="form-buttons">
+                    <button id="save-btn" type="button" style="display: none;">Save</button>
+                    <button id="update-btn" type="button" style="display:none;">Update Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<!-- Group Management Section -->
+    <div id="group-management" style="display:none;">
+        <h3>Group Management</h3>
+        <button id="create-group-btn">Create Group</button>
+        <button id="add-user-btn">Add User</button>
+        <div id="group-list" class="scrollable-list"></div>
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Group</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
